@@ -1,6 +1,7 @@
 <template>
   <div id="employee-form">
     <form @submit.prevent="handleSubmit">
+      <label>Employee Name</label>
       <input v-model="employee.name" type="text" />
       <label>Employee Email</label>
       <input v-model="employee.email" type="text" />
@@ -22,7 +23,7 @@
     },
     methods: {
     handleSubmit() {
-      console.log('testing handleSubmit')
+      this.$emit('add:employee', this.employee)
         },
       },
     }
